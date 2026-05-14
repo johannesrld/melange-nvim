@@ -1,5 +1,5 @@
 vim.cmd 'highlight clear'
-vim.cmd 'syntax reset'
+vim.cmd 'syntax off'
 vim.g.colors_name = 'melange'
 
 local bg = vim.opt.background:get()
@@ -11,23 +11,6 @@ local a = palette.a -- Grays
 local b = palette.b -- Bright foreground colors
 local c = palette.c -- Foreground colors
 local d = palette.d -- Background colors
-
-local bold, italic, underline, undercurl, strikethrough
-if vim.g.melange_enable_font_variants == true or vim.g.melange_enable_font_variants == nil then
-  --- Enable all font attributes by default
-  bold = true
-  italic = true
-  underline = true
-  undercurl = true
-  strikethrough = true
-elseif type(vim.g.melange_enable_font_variants) == 'table' then
-  --- Enable only selected font attributes
-  bold = vim.g.melange_enable_font_variants.bold
-  italic = vim.g.melange_enable_font_variants.italic
-  underline = vim.g.melange_enable_font_variants.underline
-  undercurl = vim.g.melange_enable_font_variants.undercurl
-  strikethrough = vim.g.melange_enable_font_variants.strikethrough
-end
 
 for name, attrs in pairs {
   ---- :help highlight-default -------------------------------
@@ -50,11 +33,7 @@ for name, attrs in pairs {
   WinSeparator = { fg = a.ui },
 
   LineNr = { fg = a.ui },
-  -- LineNrAbove = {},
-  -- LineNrBelow = {},
   CursorLineNr = { fg = c.yellow },
-  -- CursorLineFold = {},
-  -- CursorLineSign = {},
 
   Folded = { fg = a.com, bg = d.cyan },
   FoldColumn = 'LineNr',
@@ -62,13 +41,8 @@ for name, attrs in pairs {
 
   Pmenu = 'NormalFloat',
   PmenuSel = { bg = a.sel },
-  -- PmenuKind = {},
-  -- PmenuKindSel = {},
-  -- PmenuExtra = {},
-  -- PmenuExtraSel = {},
-  -- PmenuSbar = {},
   PmenuThumb = 'PmenuSel',
-  PmenuMatch = { fg = b.yellow, bold = bold },
+  PmenuMatch = { fg = b.yellow },
   PmenuMatchSel = { reverse = true },
   ComplMatchIns = { fg = a.com },
   WildMenu = 'NormalFloat',
@@ -79,15 +53,15 @@ for name, attrs in pairs {
   -- StatusLineTermNC = {},
   TabLine = 'StatusLineNC',
   TabLineFill = 'StatusLine',
-  TabLineSel = { bg = a.float, bold = bold },
+  TabLineSel = { bg = a.float },
   -- WinBar = {},
   -- WinBarNC = {},
 
-  CurSearch = { fg = a.bg, bg = b.yellow, bold = bold },
+  CurSearch = { fg = a.bg, bg = b.yellow },
   -- IncSearch = {},
   MatchParen = 'Substitute',
-  Search = { fg = a.bg, bg = d.yellow, bold = bold },
-  Substitute = { bg = d.red, bold = bold },
+  Search = { fg = a.bg, bg = d.yellow },
+  Substitute = { bg = d.red },
   Visual = { bg = a.sel },
   -- VisualNOS = {},
 
@@ -97,13 +71,13 @@ for name, attrs in pairs {
   NonText = 'Whitespace',
   SpecialKey = 'Whitespace',
 
-  Directory = { fg = c.green },
-  Title = { fg = c.yellow, bold = bold },
+  Directory = { fg = c.green, bold = true },
+  Title = { fg = c.yellow },
   ErrorMsg = { bg = d.red },
   ModeMsg = { fg = a.com },
   -- MsgArea = {},
   -- MsgSeparator = {},
-  MoreMsg = { fg = c.green, bold = bold },
+  MoreMsg = { fg = c.green },
   WarningMsg = { fg = c.red },
   Question = 'MoreMsg',
 
@@ -124,102 +98,74 @@ for name, attrs in pairs {
 
   ---- :help spell -------------------------------------------
 
-  SpellBad = { fg = c.red, undercurl = undercurl },
-  SpellCap = { fg = c.blue, undercurl = undercurl },
-  SpellLocal = { fg = c.yellow, undercurl = undercurl },
-  SpellRare = { fg = b.yellow, undercurl = undercurl },
+  SpellBad = { fg = c.red, },
+  SpellCap = { fg = c.blue, },
+  SpellLocal = { fg = c.yellow, },
+  SpellRare = { fg = b.yellow, },
 
   ---- :help group-name --------------------------------------
 
-  Comment = { fg = a.com, italic = italic },
+  Comment = { fg = a.com },
   Identifier = { fg = a.fg },
   Function = { fg = b.yellow },
-  Constant = { fg = c.magenta },
-  String = { fg = b.blue, italic = italic },
+  Constant = { fg = a.fg },
+  String = { fg = b.blue },
   Character = { fg = c.blue },
   Number = { fg = b.magenta },
   Boolean = 'Number',
   -- Float = {},
 
-  Statement = { fg = c.yellow },
-  -- Conditional = {},
-  -- Repeat = {},
-  -- Label = {},
-  Operator = { fg = b.red },
-  -- Keyword = {},
-  -- Exception = {},
+  Statement = { fg = a.fg },
+  Operator = { fg = a.fg },
 
-  PreProc = { fg = b.green },
-  -- Include = {},
-  -- Define = {},
-  -- Macro = {},
-  -- PreCondit = {},
+  PreProc = { fg = a.fg },
+  Type = { fg = a.fg },
 
-  Type = { fg = c.cyan },
-  -- StorageClass = {},
-  -- Structure = {},
-  -- Typedef = {},
-
-  Special = { fg = b.yellow },
-  -- SpecialChar = {},
-  -- Tag = {},
-  Delimiter = { fg = d.yellow },
+  Special = { fg = a.fg },
+  Delimiter = { fg = a.fg },
   -- SpecialComment = {},
   -- Debug = {},
 
-  Underlined = { underline = underline },
-  Bold = { bold = bold },
-  Italic = { italic = italic },
+  Underlined = { underline = true },
+  Bold = { bold = true },
+  Italic = { italic = true },
 
   Ignore = { fg = a.ui },
   Error = { bg = d.red },
-  Todo = { fg = a.com, bold = bold },
+  Todo = { fg = a.com },
 
   ---- :help treesitter-highlight-groups  --------------------
 
   ['@variable'] = 'Identifier',
-  ['@variable.builtin'] = '@string.special.symbol',
-  -- ['@variable.parameter'] = {},
-  -- ['@variable.parameter.builtin'] = {},
-  -- ['@variable.member'] = {},
+  ['@variable.builtin'] = 'Identifier',
 
   --- NOTE: Queries for these highlight groups are really hacky.
   --- Inaccurate syntax highlighting is worse than no highlighting at all,
   ['@constant'] = 'Identifier',
-  ['@constant.builtin'] = 'Constant',
-  ['@constant.macro'] = 'Constant',
+  ['@constant.builtin'] = '@constant',
+  ['@constant.macro'] = '@constant',
 
   ['@module'] = 'Identifier',
   ['@module.builtin'] = '@module',
-  ['@label'] = { fg = b.cyan },
+  ['@label'] = { fg = a.fg },
 
   -- ['@string'] = {},
   ['@string.documentation'] = { fg = b.blue, nocombine = true },
   ['@string.escape'] = { fg = c.blue },
   ['@string.regexp'] = { fg = b.blue },
   ['@string.special'] = { fg = b.cyan },
-  ['@string.special.symbol'] = { fg = a.fg, italic = italic },
+  ['@string.special.symbol'] = { fg = a.fg },
   ['@string.special.path'] = 'Directory',
   ['@string.special.url'] = { fg = c.blue },
-
-  -- ['@character'] = {},
-  -- ['@character.special'] = {},
-
-  -- ['@boolean'] = {},
-  -- ['@number'] = {},
-  -- ['@number.float'] = {},
-
   -- ['@type'] = {},
   ['@type.builtin'] = '@type',
-  -- ['@type.definition'] = {},
-
-  -- ['@attribute'] = {},
-  -- ['@attribute.builtin'] = {},
-  -- ['@property'] = {},
+  ['@type.definition'] = { fg = c.cyan},
 
   -- ['@function'] = {},
-  ['@function.builtin'] = '@function',
   ['@function.macro'] = '@function',
+  ['@function.definition'] = { fg = b.yellow},
+  ['@function.call'] = { fg = a.fg},
+  ['@function.builtin'] = { fg = a.fg },
   -- ['@function.method'] = {},
   ['@constructor'] = '@function',
   -- ['@operator'] = {},
@@ -251,15 +197,15 @@ for name, attrs in pairs {
   ['@comment.todo'] = 'Todo',
   ['@comment.warning'] = 'Todo',
 
-  ['@markup.italic'] = { italic = italic },
-  ['@markup.strong'] = { bold = bold },
-  ['@markup.strikethrough'] = { strikethrough = strikethrough },
-  ['@markup.underline'] = { underline = underline },
+  ['@markup.italic'] = { italic = true },
+  ['@markup.strong'] = { bold = true },
+  ['@markup.strikethrough'] = { strikethrough = true },
+  ['@markup.underline'] = { underline = true },
 
   ['@markup.heading'] = 'Title',
   -- ['@markup.heading.1'] = {},
-  ['@markup.heading.2'] = { fg = b.yellow, bold = bold },
-  ['@markup.heading.3'] = { fg = b.green, bold = bold },
+  ['@markup.heading.2'] = { fg = b.yellow },
+  ['@markup.heading.3'] = { fg = b.green },
   -- ['@markup.heading.4'] = '@markup.heading',
   ['@markup.heading.5'] = '@markup.heading.2',
   ['@markup.heading.6'] = '@markup.heading.3',
@@ -267,7 +213,7 @@ for name, attrs in pairs {
   ['@markup.quote'] = 'Comment',
   ['@markup.math'] = '@markup.raw',
 
-  ['@markup.link'] = { underline = underline },
+  ['@markup.link'] = { underline = true },
   -- ['@markup.link.label'] = {},
   ['@markup.link.url'] = '@string.special.url',
 
@@ -294,11 +240,11 @@ for name, attrs in pairs {
   DiagnosticInfo = { fg = c.blue },
   DiagnosticHint = { fg = c.cyan },
   DiagnosticOk = { fg = c.green },
-  DiagnosticUnderlineError = { undercurl = undercurl, sp = c.red },
-  DiagnosticUnderlineWarn = { undercurl = undercurl, sp = b.yellow },
-  DiagnosticUnderlineInfo = { undercurl = undercurl, sp = c.blue },
-  DiagnosticUnderlineHint = { undercurl = undercurl, sp = c.cyan },
-  DiagnosticUnderlineOk = { undercurl = undercurl, sp = c.green },
+  DiagnosticUnderlineError = { underline = true, sp = c.red },
+  DiagnosticUnderlineWarn = { underline = true, sp = b.yellow },
+  DiagnosticUnderlineInfo = { underline = true, sp = c.blue },
+  DiagnosticUnderlineHint = { underline = true, sp = c.cyan },
+  DiagnosticUnderlineOk = { underline = true, sp = c.green },
   -- DiagnosticVirtualTextError = {},
   -- DiagnosticVirtualTextWarn = {},
   -- DiagnosticVirtualTextInfo = {},
@@ -316,11 +262,11 @@ for name, attrs in pairs {
   -- DiagnosticSignOk = {},
 
   DiagnosticDeprecated = 'DiagnosticUnderlineError',
-  DiagnosticUnnecessary = { undercurl = undercurl, sp = a.com },
+  DiagnosticUnnecessary = { undercurl = true, sp = a.com },
 
   ---- :help lsp-highlight -----------------------------------
 
-  LspReferenceText = { bg = a.float, underline = underline },
+  LspReferenceText = { bg = a.float, underline = true },
   -- LspReferenceRead = {},
   -- LspReferenceWrite = {},
   -- LspReferenceTarget = {},
@@ -336,14 +282,17 @@ for name, attrs in pairs {
   -- ['@lsp.type.decorator'] = {},
   -- ['@lsp.type.enum'] = {},
   ['@lsp.type.enumMember'] = 'Constant',
-  -- ['@lsp.type.function'] = {},
+  ['@lsp.type.function'] = {},
+  ['@lsp.type.method'] = {},
+  ['@lsp.typemod.function.declaration'] = "@function",
+  ['@lsp.typemod.method.declaration'] = "@function",
   -- ['@lsp.type.interface'] = {},
   ['@lsp.type.macro'] = {},
   -- ['@lsp.type.method'] = {},
   ['@lsp.type.namespace'] = 'Directory',
   -- ['@lsp.type.number'] = {},
   -- ['@lsp.type.operator'] = {},
-  ['@lsp.type.parameter'] = { fg = a.fg, bold = bold },
+  ['@lsp.type.parameter'] = { fg = a.fg },
   -- ['@lsp.type.property'] = {},
   -- ['@lsp.type.struct'] = {},
   -- ['@lsp.type.type'] = {},
@@ -352,7 +301,6 @@ for name, attrs in pairs {
 
   ['@lsp.typemod.comment.documentation'] = '@comment.documentation',
   -- ['@lsp.typemod.variable.functionScope'] = {},
-  ['@lsp.typemod.variable.globalScope'] = { italic = italic },
 
   ---- netrw -------------------------------------------------
 
@@ -372,7 +320,6 @@ for name, attrs in pairs {
   texOptSep = '@punctuation.delimiter',
   texOptEqual = 'Operator',
   texFileArg = 'Constant',
-  texTitleArg = { bold = bold },
   -- texEnvArgName = 'PreCondit',
   texRefArg = 'Constant',
   texMathZone = '@markup.math',
@@ -503,44 +450,12 @@ for name, attrs in pairs {
   MiniStarterSection = { fg = c.green },
   MiniStarterQuery = { fg = c.blue },
 
-  MiniStatuslineDevinfo = { fg = a.fg, bg = a.sel },
-  MiniStatuslineFileinfo = 'MiniStatuslineDevinfo',
-  MiniStatuslineFilename = { fg = a.com, bg = a.float },
-  -- MiniStatuslineInactive = {},
-  MiniStatuslineModeNormal = { bg = a.com, fg = a.bg, bold = bold },
-  MiniStatuslineModeInsert = { bg = b.yellow, fg = a.bg, bold = bold },
-  MiniStatuslineModeReplace = { bg = b.red, fg = a.bg, bold = bold },
-  MiniStatuslineModeCommand = { bg = b.cyan, fg = a.bg, bold = bold },
-  MiniStatuslineModeOther = { bg = c.green, fg = a.bg, bold = bold },
-  MiniStatuslineModeVisual = { bg = b.magenta, fg = a.bg, bold = bold },
 
-  -- MiniSurround = {},
-
-  -- MiniTablineCurrent = {},
-  -- MiniTablineVisible = {},
-  -- MiniTablineHidden = {},
-  -- MiniTablineModifiedCurrent = {},
-  -- MiniTablineModifiedVisible = {},
-  -- MiniTablineModifiedHidden = {},
-  -- MiniTablineTabpagesection = {},
-  -- MiniTablineTrunc = {},
   MiniTablineFill = { link = 'TabLineFill' },
-
-  -- MiniTestEmphasis = {},
-  MiniTestFail = { fg = d.red, bold = true },
-  MiniTestPass = { fg = d.green, bold = true },
-
-  MiniTrailspace = { link = 'DiffRemoved' },
 
   ---- "Saghen/blink.cmp" :h blink-cmp-config-appearance -----
 
-  -- BlinkCmpLabel = {},
-  BlinkCmpLabelMatch = { fg = b.yellow, bold = bold },
-  -- BlinkCmpLabelDeprecated = {},
-  -- BlinkCmpLabelDetail = {},
-  -- BlinkCmpLabelDescription = {},
-  -- BlinkCmpSource = {},
-  -- BlinkCmpKind = {},
+  BlinkCmpLabelMatch = { fg = b.yellow, bold = true },
   BlinkCmpKindText = '@text',
   BlinkCmpKindMethod = '@method',
   BlinkCmpKindFunction = '@function',
@@ -566,24 +481,11 @@ for name, attrs in pairs {
   BlinkCmpKindEvent = '@type',
   BlinkCmpKindOperator = '@operator',
   BlinkCmpKindTypeParameter = '@type',
-  -- BlinkCmpScrollBarThumb = {},
-  -- BlinkCmpScrollBarGutter = {},
-  -- BlinkCmpGhostText = {},
-  -- BlinkCmpMenu = {},
-  -- BlinkCmpMenuBorder = {},
-  -- BlinkCmpMenuSelection = {},
-  -- BlinkCmpDoc = {},
-  -- BlinkCmpDocBorder = {},
-  -- BlinkCmpDocSeparator = {},
-  -- BlinkCmpDocCursorLine = {},
-  -- BlinkCmpSignatureHelp = {},
-  -- BlinkCmpSignatureHelpBorder = {},
-  -- BlinkCmpSignatureHelpActiveParameter = {},
 
   ---- "hrsh7th/nvim-cmp" :h cmp-highlight -------------------
 
-  CmpItemAbbrMatch = { fg = b.yellow, bold = bold },
-  CmpItemAbbrMatchFuzzy = { fg = b.yellow, bold = bold },
+  CmpItemAbbrMatch = { fg = b.yellow },
+  CmpItemAbbrMatchFuzzy = { fg = b.yellow },
   CmpItemKindVariable = '@variable',
   CmpItemKindValue = '@constant',
   CmpItemKindUnit = '@constant',
