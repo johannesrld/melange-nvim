@@ -165,6 +165,7 @@ for name, attrs in pairs {
   ['@function.macro'] = '@function',
   ['@function.definition'] = { fg = b.yellow},
   ['@function.call'] = { fg = a.fg},
+  ['@function.method.call'] = { fg = a.fg},
   ['@function.builtin'] = { fg = a.fg },
   -- ['@function.method'] = {},
   ['@constructor'] = '@function',
