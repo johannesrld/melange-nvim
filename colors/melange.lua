@@ -148,7 +148,7 @@ for name, attrs in pairs {
   ['@module.builtin'] = '@module',
   ['@label'] = { fg = a.fg },
 
-  ['@string.escape'] = { fg = b.red },
+  ['@string.escape'] = { fg = b.red, bg = b.redbg },
   ['@character.printf'] = '@string.escape',
   ['@string.regexp'] = '@string',
   ['@punctuation.special'] = { fg = c.blue2, bold = true },
