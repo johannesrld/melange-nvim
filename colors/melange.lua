@@ -122,7 +122,7 @@ for name, attrs in pairs {
   Type = { fg = a.fg },
 
   Special = { fg = a.fg },
-  Delimiter = { fg = a.fg },
+  Delimiter = { fg = a.com },
   -- SpecialComment = {},
   -- Debug = {},
 
@@ -168,10 +168,6 @@ for name, attrs in pairs {
   ['@function.method.call'] = { fg = a.fg},
   ['@function.builtin'] = { fg = a.fg },
   ['@constructor'] = '@function',
-
-  -- ['@punctuation.bracket'] = {},
-  ['@punctuation.delimiter'] = { fg = c.red },
-  -- ['@punctuation.special'] = {},
 
   -- ['@comment'] = {},
   ['@comment.documentation'] = { fg = a.com, nocombine = true },
