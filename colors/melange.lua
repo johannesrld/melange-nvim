@@ -115,7 +115,7 @@ for name, attrs in pairs {
   Boolean = 'Number',
   -- Float = {},
 
-  Statement = { fg = c.blue2 },
+  Statement = { fg = c.blue2, bold = true },
   Operator = { fg = a.fg },
 
   PreProc = { fg = a.fg },
