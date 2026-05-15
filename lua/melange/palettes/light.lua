@@ -22,6 +22,7 @@ return {
     green   = "#6E9B72",
     cyan    = "#739797",
     blue    = "#7892BD",
+    blue2   = "#569CD6",
     magenta = "#BE79BB",
   },
   d = {
