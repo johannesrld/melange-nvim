@@ -113,7 +113,6 @@ for name, attrs in pairs {
   Character = { fg = c.blue },
   Number = { fg = b.magenta },
   Boolean = 'Number',
-  -- Float = {},
 
   Statement = { fg = c.blue2, bold = true },
   Operator = { fg = a.fg },
@@ -150,6 +149,7 @@ for name, attrs in pairs {
   ['@label'] = { fg = a.fg },
 
   ['@string.escape'] = { fg = b.red },
+  ['@string.special'] = { fg = c.blue2 },
   ['@type.builtin'] = '@type',
 
   ['@function.macro'] = '@function',
