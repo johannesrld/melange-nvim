@@ -19,8 +19,8 @@ return {
   c = {
     red     = "#C77B8B",
     yellow  = "#BC5C00",
-    green   = "#6E9B72",
-    greenbg  = "#effaf0",
+    green   = "#5f8c63",
+    greenbg  = "#f3f8f4",
     cyan    = "#739797",
     blue    = "#7892BD",
     blue2   = "#0287c8",
