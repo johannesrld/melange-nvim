@@ -106,7 +106,7 @@ for name, attrs in pairs {
   ---- :help group-name --------------------------------------
 
   Comment = { fg = a.com },
-  Identifier = { fg = b.blue2 },
+  Identifier = { fg = a.fg },
   Function = { fg = b.yellow },
   Constant = { fg = a.fg },
   String = { fg = b.blue },
