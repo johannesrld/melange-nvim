@@ -109,7 +109,7 @@ for name, attrs in pairs {
   Identifier = { fg = a.fg },
   Function = { fg = c.green, bg = c.greenbg },
   Constant = { fg = a.fg },
-  String = { fg = b.red2 },
+  String = { fg = b.red2, bg = b.redbg },
   Character = { fg = c.blue },
   Number = { fg = b.magenta },
   Boolean = 'Number',
@@ -149,8 +149,7 @@ for name, attrs in pairs {
   ['@module.builtin'] = '@module',
   ['@label'] = { fg = a.fg },
 
-  ['@string.escape'] = { fg = c.blue },
-  ['@string.regexp'] = { fg = b.blue },
+  ['@string.escape'] = { fg = b.red },
   ['@type.builtin'] = '@type',
 
   ['@function.macro'] = '@function',
