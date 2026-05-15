@@ -150,7 +150,7 @@ for name, attrs in pairs {
 
   ['@string.escape'] = { fg = b.red },
   ['@string.special'] = { fg = c.blue2, bold = true },
-  ['@string.regex'] = '@string',
+  ['@string.regexp'] = '@string',
   ['@type.builtin'] = '@type',
 
   ['@function.macro'] = '@function',
