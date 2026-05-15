@@ -110,7 +110,7 @@ for name, attrs in pairs {
   Function = { fg = c.green, bg = c.greenbg },
   Constant = { fg = a.fg },
   String = { fg = b.red2, bg = b.redbg },
-  Character = { fg = c.blue },
+  Character = { fg = b.red2, bg = b.redbg },
   Number = { fg = b.magenta },
   Boolean = 'Number',
 
@@ -149,6 +149,7 @@ for name, attrs in pairs {
   ['@label'] = { fg = a.fg },
 
   ['@string.escape'] = { fg = b.red },
+  ['@character.printf'] = '@string.escape',
   ['@string.regexp'] = '@string',
   ['@punctuation.special'] = { fg = c.blue2, bold = true },
 
