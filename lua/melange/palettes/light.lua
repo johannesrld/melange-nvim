@@ -10,6 +10,7 @@ return {
   },
   b = {
     red     = "#BF0021",
+    red2    = "#b85c57",
     yellow  = "#A06D00",
     green   = "#3A684A",
     cyan    = "#3D6568",
