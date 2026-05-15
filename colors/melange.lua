@@ -71,7 +71,7 @@ for name, attrs in pairs {
   NonText = 'Whitespace',
   SpecialKey = 'Whitespace',
 
-  Directory = { fg = c.green, bold = true },
+  Directory = { fg = c.fg },
   Title = { fg = c.yellow },
   ErrorMsg = { bg = d.red },
   ModeMsg = { fg = a.com },
@@ -107,7 +107,7 @@ for name, attrs in pairs {
 
   Comment = { fg = a.com },
   Identifier = { fg = a.fg },
-  Function = { fg = b.yellow },
+  Function = { fg = c.green, bg = c.greenbg },
   Constant = { fg = a.fg },
   String = { fg = b.blue },
   Character = { fg = c.blue },

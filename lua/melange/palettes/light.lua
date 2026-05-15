@@ -20,6 +20,7 @@ return {
     red     = "#C77B8B",
     yellow  = "#BC5C00",
     green   = "#6E9B72",
+    greenbg  = "#cee5d0",
     cyan    = "#739797",
     blue    = "#7892BD",
     blue2   = "#0287c8",
