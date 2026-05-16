@@ -135,6 +135,7 @@ for name, attrs in pairs {
 
   ---- :help treesitter-highlight-groups  --------------------
 
+  ['@none'] = 'Identifier',
   ['@variable'] = 'Identifier',
   ['@variable.builtin'] = 'Identifier',
   ['@variable.haskell'] = { fg = a.fg, bg = a.bg },
@@ -271,12 +272,12 @@ for name, attrs in pairs {
   ['@lsp.typemod.type.declaration'] = "@lsp.type.type",
   ['@lsp.typemod.typeParameter'] = 'Type',
   ['@lsp.typemod.parameter'] = '@lsp.type.parameter',
-  ['@lsp.typemod.class.declaration'] = 'Type',
   ['@lsp.typemod.comment.documentation'] = '@comment.documentation',
   ['@lsp.typemod.interface.defaultLibrary'] = 'Type',
   ['@lsp.typemod.keyword'] = 'Keyword',
   ['@lsp.typemod.operator'] = 'Operator',
   ['@lsp.type.formatSpecifier'] = '@string.escape',
+  ['@lsp.typemod.class.constructorOrDestructor'] = '@function',
 
   ---- "echasnovski/mini.nvim" -------------------------------
   ---- https://github.com/echasnovski/mini.nvim/blob/main/CONTRIBUTING.md#list-of-highlight-groups
