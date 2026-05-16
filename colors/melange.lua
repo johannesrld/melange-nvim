@@ -249,6 +249,7 @@ for name, attrs in pairs {
 
   ---- :help lsp-semantic-highlight --------------------------
 
+  ['@lsp.type.builtinType'] = 'Type',
   ['@lsp.type.modifier'] = 'Keyword',
   ['@lsp.type.function'] = {},
   ['@lsp.type.method'] = {},
@@ -259,8 +260,7 @@ for name, attrs in pairs {
   ['@lsp.typemod.method.declaration'] = "@function",
   ['@lsp.typemod.method.definition'] = "@function",
   ['@lsp.typemod.macro.declaration'] = "@function",
-  ['@lsp.typemod.variable.declaration'] = "Identifier",
-  ['@lsp.typemod.variable.readonly'] = "Identifier",
+  ['@lsp.typemod.variable'] = "Identifier",
   ['@lsp.typemod.enum'] = "Type",
   ['@lsp.typemod.enum.declaration'] = "Type",
   ['@lsp.typemod.enumMember'] = "@lsp.type.enumMember",
@@ -273,6 +273,10 @@ for name, attrs in pairs {
   ['@lsp.typemod.parameter'] = '@lsp.type.parameter',
   ['@lsp.typemod.class.declaration'] = 'Type',
   ['@lsp.typemod.comment.documentation'] = '@comment.documentation',
+  ['@lsp.typemod.interface.defaultLibrary'] = 'Type',
+  ['@lsp.typemod.keyword'] = 'Keyword',
+  ['@lsp.typemod.operator'] = 'Operator',
+  ['@lsp.type.formatSpecifier'] = '@string.escape',
 
   ---- "echasnovski/mini.nvim" -------------------------------
   ---- https://github.com/echasnovski/mini.nvim/blob/main/CONTRIBUTING.md#list-of-highlight-groups
