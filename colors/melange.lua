@@ -268,162 +268,20 @@ for name, attrs in pairs {
   ['@lsp.typemod.interface.declaration'] = "@lsp.type.interface",
   ['@lsp.typemod.property'] = "@lsp.type.property",
   ['@lsp.typemod.property.declaration'] = "@lsp.type.property",
-
-  ['@lsp.typemod.comment.documentation'] = '@comment.documentation',
+  ['@lsp.typemod.type.declaration'] = "@lsp.type.type",
   ['@lsp.typemod.typeParameter'] = 'Type',
   ['@lsp.typemod.parameter'] = '@lsp.type.parameter',
   ['@lsp.typemod.class.declaration'] = 'Type',
-  -- ['@lsp.typemod.variable.functionScope'] = {},
-
-  ---- netrw -------------------------------------------------
-
-  -- netrwDir = 'Directory',
-  netrwClassify = 'Delimiter',
-  netrwTreeBar = 'Delimiter',
-  netrwExe = { fg = c.red },
-  netrwSymLink = { fg = c.magenta },
-
-  ---- Markdown ----------------------------------------------
-
-  markdownCode = '@markup.raw',
-  markdownCodeBlock = '@markup.raw.block',
-
-  ---- "lervag/vimtex" :h vimtex-syntax-reference ------------
-
-  texOptSep = '@punctuation.delimiter',
-  texOptEqual = 'Operator',
-  texFileArg = 'Constant',
-  -- texEnvArgName = 'PreCondit',
-  texRefArg = 'Constant',
-  texMathZone = '@markup.math',
-  texMathDelimZone = 'Statement',
-  texMathEnvArgName = 'texEnvArgName',
-  texMathCmd = 'Function',
-  texMathDelim = 'Delimiter',
-  texMathSymbol = 'Operator',
-  texItemLabelConcealed = '@label',
+  ['@lsp.typemod.comment.documentation'] = '@comment.documentation',
 
   ---- "echasnovski/mini.nvim" -------------------------------
   ---- https://github.com/echasnovski/mini.nvim/blob/main/CONTRIBUTING.md#list-of-highlight-groups
 
-  -- MiniAnimateCursor = {},
-  -- MiniAnimateNormalFloat = {},
-
-  -- MiniClueBorder = {},
-  -- MiniClueDescGroup = {},
-  -- MiniClueDescSingle = {},
-  -- MiniClueNextKey = {},
-  -- MiniClueNextKeyWithPostkeys = {},
-  -- MiniClueSeparator = {},
-  -- MiniClueTitle = {},
-
-  -- MiniCompletionActiveParameter = {},
-  -- MiniCompletionInfoBorderOutdated = {},
-
-  -- MiniCursorword = {},
-  -- MiniCursorwordCurrent = {},
-
-  MiniDepsChangeAdded = { link = 'DiffAdd' },
-  MiniDepsChangeRemoved = { link = 'DiffDelete' },
-  -- MiniDepsHint = {},
-  -- MiniDepsInfo = {},
-  -- MiniDepsMsgBreaking = {},
-  -- MiniDepsPlaceholder = {},
-  -- MiniDepsTitle = {},
-  -- MiniDepsTitleError = {},
-  -- MiniDepsTitleSame = {},
-  -- MiniDepsTitleUpdate = {},
-
   MiniDiffSignAdd = { fg = c.green },
   MiniDiffSignChange = { fg = c.magenta },
   MiniDiffSignDelete = { fg = c.red },
-  -- MiniDiffOverAdd = {},
-  -- MiniDiffOverChange = {},
-  -- MiniDiffOverChangeBuf = {},
-  -- MiniDiffOverContext = {},
-  -- MiniDiffOverContextBuf = {},
-  -- MiniDiffOverDelete = {},
-
-  -- MiniFilesBorder = {},
-  -- MiniFilesBorderModified = {},
-  MiniFilesCursorLine = 'PmenuSel',
-  -- MiniFilesDirectory = {},
-  -- MiniFilesFile = {},
-  -- MiniFilesNormal = {},
-  MiniFilesTitle = { fg = a.com, bg = a.float },
-  -- MiniFilesTitleFocused = {},
-
-  -- MiniHipatternsFixme = {},
-  -- MiniHipatternsHack = {},
-  -- MiniHipatternsNote = {},
-  -- MiniHipatternsTodo = {},
-
-  MiniIconsAzure = { fg = b.blue },
-  MiniIconsBlue = { fg = c.blue },
-  MiniIconsCyan = { fg = c.cyan },
-  MiniIconsGreen = { fg = c.green },
-  MiniIconsGrey = { fg = a.fg },
-  MiniIconsOrange = { fg = d.yellow },
-  MiniIconsPurple = { fg = c.magenta },
-  MiniIconsRed = { fg = b.red },
-  MiniIconsYellow = { fg = b.yellow },
-
-  MiniIndentscopeSymbol = { fg = a.sel, nocombine = true },
-  -- MiniIndentscopeSymbolOff = {},
-
-  -- MiniJump = {},
-
   MiniJump2dSpot = { fg = c.magenta, bold = true, nocombine = true },
   MiniJump2dSpotAhead = { fg = c.cyan, bg = c.float, nocombine = true },
-  -- MiniJump2dSpotUnique = {},
-  -- MiniJump2dDim = {},
-
-  -- MiniMapNormal = {},
-  -- MiniMapSymbolCount = {},
-  -- MiniMapSymbolLine = {},
-  -- MiniMapSymbolView = {},
-
-  -- MiniNotifyBorder = {},
-  -- MiniNotifyNormal = {},
-  -- MiniNotifyLspProgress = {},
-  -- MiniNotifyTitle = {},
-
-  -- MiniOperatorsExchangeFrom = {},
-
-  -- MiniPickBorder = {},
-  -- MiniPickBorderBusy = {},
-  -- MiniPickBorderText = {},
-  -- MiniPickCursor = {},
-  MiniPickIconDirectory = { fg = b.cyan },
-  -- MiniPickIconFile = {},
-  -- MiniPickHeader = {},
-  MiniPickMatchCurrent = { bg = a.sel },
-  -- MiniPickMatchMarked = {},
-  -- MiniPickMatchRanges = {},
-  -- MiniPickNormal = {},
-  -- MiniPickPreviewLine = {},
-  -- MiniPickPreviewRegion = {},
-  MiniPickPrompt = { fg = b.yellow, bg = a.float },
-  -- MiniPickPromptCaret = {},
-  -- MiniPickPromptPrefix = {},
-
-  -- MiniSnippetsCurrent = {},
-  -- MiniSnippetsCurrentReplace = {},
-  -- MiniSnippetsCurrentFinal = {},
-  -- MiniSnippetsCurrentUnvisited = {},
-  -- MiniSnippetsCurrentVisited = {},
-
-  -- MiniStarterCurrent = {},
-  MiniStarterFooter = { fg = c.yellow },
-  -- MiniStarterHeader = {},
-  -- MiniStarterInactive = {},
-  -- MiniStarterItem = {},
-  -- MiniStarterItemBullet = {},
-  MiniStarterItemPrefix = { fg = c.red },
-  MiniStarterSection = { fg = c.green },
-  MiniStarterQuery = { fg = c.blue },
-
-
   MiniTablineFill = { link = 'TabLineFill' },
 
   ---- "Saghen/blink.cmp" :h blink-cmp-config-appearance -----
@@ -455,66 +313,6 @@ for name, attrs in pairs {
   BlinkCmpKindOperator = '@operator',
   BlinkCmpKindTypeParameter = '@type',
 
-  ---- "hrsh7th/nvim-cmp" :h cmp-highlight -------------------
-
-  CmpItemAbbrMatch = { fg = b.yellow },
-  CmpItemAbbrMatchFuzzy = { fg = b.yellow },
-  CmpItemKindVariable = '@variable',
-  CmpItemKindValue = '@constant',
-  CmpItemKindUnit = '@constant',
-  CmpItemKindTypeParameter = '@type',
-  CmpItemKindText = '@text',
-  CmpItemKindStruct = '@type',
-  CmpItemKindSnippet = '@string.special',
-  CmpItemKindReference = '@type',
-  CmpItemKindProperty = '@property',
-  CmpItemKindOperator = '@operator',
-  CmpItemKindModule = '@namespace',
-  CmpItemKindMethod = '@method',
-  CmpItemKindKeyword = '@keyword',
-  CmpItemKindInterface = '@type',
-  CmpItemKindFunction = '@function',
-  CmpItemKindFolder = '@string.special.path',
-  CmpItemKindFile = '@string.special.path',
-  CmpItemKindField = '@field',
-  CmpItemKindEvent = '@type',
-  CmpItemKindEnumMember = '@field',
-  CmpItemKindEnum = '@type',
-  CmpItemKindConstructor = '@constructor',
-  CmpItemKindConstant = '@constant',
-  CmpItemKindColor = '@constant',
-  CmpItemKindClass = '@type',
-
-  ---- "lewis6991/gitsigns.nvim" :h gitsigns-highlight-groups
-
-  GitSignsAdd = 'MiniDiffSignAdd',
-  GitSignsChange = 'MiniDiffSignChange',
-  GitSignsDelete = 'MiniDiffSignDelete',
-  GitSignsCurrentLineBlame = { fg = c.blue },
-
-  ---- "lukas-reineke/indent-blankline.nvim" :h ibl.highlights
-
-  IblIndent = 'MiniIndentscopeSymbol',
-  IblWhitespace = 'IblIndent',
-  -- IblScope = {},
-
-  ---- "nvim-neo-tree/neo-tree.nvim" :h neo-tree-highlights
-
-  NeoTreeFloatBorder = 'Normal',
-  NeoTreeNormal = 'Pmenu',
-  NeoTreeNormalNC = 'NeoTreeNormal',
-  NeoTreeCursorLine = 'PmenuSel',
-  NeoTreeWinSeparator = { fg = a.bg, bg = a.bg }, -- hide
-
-  ---- "hiphish/rainbow-delimiters.nvim" :h rb-delimiters-colors
-
-  RainbowDelimiterRed = { fg = b.red },
-  RainbowDelimiterYellow = { fg = b.yellow },
-  RainbowDelimiterBlue = { fg = b.blue },
-  RainbowDelimiterOrange = { fg = c.yellow },
-  RainbowDelimiterGreen = { fg = b.green },
-  RainbowDelimiterViolet = { fg = c.magenta },
-  RainbowDelimiterCyan = { fg = b.cyan },
 } do
   if type(attrs) == 'table' then
     vim.api.nvim_set_hl(0, name, attrs)
