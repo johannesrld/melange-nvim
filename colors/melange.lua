@@ -156,11 +156,11 @@ for name, attrs in pairs {
 
   ['@type.builtin'] = '@type',
 
-  ['@function.macro'] = '@function',
   ['@function.call'] = { fg = a.fg },
+  ['@function.macro'] = '@function.call',
   ['@function.method.call'] = { fg = a.fg },
   ['@function.builtin'] = { fg = a.fg },
-  ['@constructor'] = '@function',
+  ['@constructor'] = '@type',
 
   -- ['@comment'] = {},
   ['@comment.documentation'] = { fg = a.com, nocombine = true },
