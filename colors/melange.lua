@@ -137,6 +137,7 @@ for name, attrs in pairs {
 
   ['@variable'] = 'Identifier',
   ['@variable.builtin'] = 'Identifier',
+  ['@variable.haskell'] = { bg = a.bg, link = 'Identifier'},
 
   --- NOTE: Queries for these highlight groups are really hacky.
   --- Inaccurate syntax highlighting is worse than no highlighting at all,
